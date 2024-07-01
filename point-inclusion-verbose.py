@@ -71,6 +71,7 @@ async def main():
         with open('data/point.csv') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
+                # print(row)
                 point[0] = int(row[0])
                 point[1] = int(row[1])
         
@@ -116,6 +117,14 @@ async def main():
                 i = i + 1
     
 
+
+        ## DEBUGGING
+    print("\nDEBUGGING\n")
+    print("Polygon: ",polygon)
+    print("The point is ",point)
+    print("The polygon boundary is ",polygon_boundary)
+
+
     #convert the polygon to securepolygon
 
     # secpolygon = []
@@ -139,6 +148,11 @@ async def main():
     for i in range(len_polygon):
         sec_polygon_boundary[i] = mpc.input(secint(polygon_boundary[i]),2)
 
+        ## DEBUGGING
+    print("\nDEBUGGING\n")
+    print("The shared Polygon: ",x)
+    print("The shared point is ",sec_point)
+    print("The shared polygon boundary is ",sec_polygon_boundary)
 
     # take each edge and determine reln with the line
     for i in range(len_polygon):
@@ -159,11 +173,10 @@ async def main():
     verdict = mpc.if_else(result == len_polygon,1,0)
     
     #print the result
-    print("The solution is ")
     print(await mpc.output(verdict))
 
     # print(await mpc.output(verdict))
-    print("\nNote: 1 means Point lies inside Polygon!")
+    print("Note: 1 means Point lies inside Polygon!")
     print("Note: 0 Point lies outside Polygon!")
 
     await mpc.shutdown()
