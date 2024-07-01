@@ -66,6 +66,7 @@ async def main():
 
     # if pid is one, then you are Alice and thus have a point 
     if role == 1:
+        print("You have a point as input!")
         #open the csv file containing the point's coordinates
         with open('data/point.csv') as csvfile:
             reader = csv.reader(csvfile)
@@ -80,6 +81,7 @@ async def main():
     # - the points are in cyclic order
     # - the first m points belong to lower boundary
     if role == 2:
+        print("You have a polygon as input!")
         #open the csv file containing the polygon's coordinates
         with open('data/polygon.csv') as csvfile:
             reader = csv.reader(csvfile)
