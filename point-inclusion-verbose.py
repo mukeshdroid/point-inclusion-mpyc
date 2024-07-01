@@ -1,7 +1,7 @@
 """ Two party Point Inclusion Problem in 2D
 
 Alice has has a point z = (a,b).
-Bob has a convex polygon.
+Bob has a polygon.
 We need a trusted helper.
 
 

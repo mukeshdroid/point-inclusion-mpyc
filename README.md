@@ -46,3 +46,34 @@ python3 millionaire-problem.py -P <IP:PORT of device 0> -P localhost -P <IP:PORT
 ```
 python3 millionaire-problem.py -P <IP:PORT of device 0>  -P <IP:PORT of device 1> -P localhost -I0
 ```
+
+---
+
+### Providing Inputs
+
+Number of participants that can participate in this protocol must be greater than 2.
+The following roles are predefined:
+| Party   | Role  | Input |
+| :---:   | :---: | :---: |
+| 0 | Trusted Helper   | None   |
+| 1 | Alice   | Point   |
+| 2 | Bob   | Polygon   |
+
+#### Providing Point
+The point should be input in the file point.csv in the data directory. Only 2d points are acceptible.
+
+#### Providing Polygon
+The polygon should be placed in the file polygon.csv in the data directory. The polygon is assumed to have the following properties:
+     - the first entry is leftmost point. 
+     - the points are in cyclic order
+     - the first m points belong to lower boundary
+
+The third entry in each row of polygon.csv corrsponds to the edges and are labelled as follows:
+     - 1 means edge is in lower boundary
+     - -1 means edge is in the upper boundary
+The edge is defined using the current point and the next one.
+
+
+     
+         
+
