@@ -40,7 +40,6 @@ def sec_point_line(x1,y1,x2,y2,x3,y3):
     # if val > 0 -> 1
     # if val = 0 -> 0
     # if val < 0 -> -1
-    #could have a simpler solution! can't think of one at 3am. Please refactor!!!
     return (res1 + res2)/2
 
 async def main():
