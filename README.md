@@ -64,13 +64,13 @@ The point should be input in the file point.csv in the data directory. Only 2d p
 
 #### Providing Polygon
 The polygon should be placed in the file polygon.csv in the data directory. The polygon is assumed to have the following properties:
-     - the first entry is leftmost point. 
-     - the points are in cyclic order
-     - the first m points belong to lower boundary
+     * the first entry is leftmost point. 
+     * the points are in cyclic order
+     * the first m points belong to lower boundary
 
 The third entry in each row of polygon.csv corrsponds to the edges and are labelled as follows:
-     - 1 means edge is in lower boundary
-     - -1 means edge is in the upper boundary
+     * 1 means edge is in lower boundary
+     * -1 means edge is in the upper boundary
 The edge is defined using the current point and the next one.
 
 
