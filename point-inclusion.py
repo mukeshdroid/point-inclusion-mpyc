@@ -161,11 +161,12 @@ async def main():
     
     #print the result
     print("The solution is ")
-    print(await mpc.output(verdict))
+    print(await mpc.output(verdict,[1,2]))
 
-    # print(await mpc.output(verdict))
-    print("\nNote: 1 means Point lies inside Polygon!")
-    print("Note: 0 Point lies outside Polygon!")
+    # print(await mpc.output(verdict)) for parties 1 and 2
+    if role in [1,2]:
+        print("\nNote: 1 means Point lies inside Polygon!")
+        print("Note: 0 Point lies outside Polygon!")
 
     await mpc.shutdown()
 

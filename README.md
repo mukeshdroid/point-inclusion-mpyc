@@ -21,12 +21,12 @@ python3 millionaire-problem.py -M2 -I0
 
 - In terminal 1 (Alice or party with point)
 ```
-python3 millionaire-problem.py -M2 -I0
+python3 millionaire-problem.py -M2 -I1
 ```
 
 -In terminal 2 (Bob or party with polygon)
 ```
-python3 millionaire-problem.py -M2 -I0
+python3 millionaire-problem.py -M2 -I2
 ```
 
 ### To run on differnet computers:
@@ -39,12 +39,12 @@ python3 millionaire-problem.py -P localhost -P <IP:PORT of device 1> -P <IP:PORT
 - In terminal 1 (Alice or party with point)
 
 ```
-python3 millionaire-problem.py -P <IP:PORT of device 0> -P localhost -P <IP:PORT of device 2> -I0
+python3 millionaire-problem.py -P <IP:PORT of device 0> -P localhost -P <IP:PORT of device 2> -I1
 ```
 
 - In terminal 2 (Bob or party with polygon)
 ```
-python3 millionaire-problem.py -P <IP:PORT of device 0>  -P <IP:PORT of device 1> -P localhost -I0
+python3 millionaire-problem.py -P <IP:PORT of device 0>  -P <IP:PORT of device 1> -P localhost -I2
 ```
 
 ---
