@@ -66,13 +66,14 @@ async def main():
 
     # if pid is one, then you are Alice and thus have a point 
     if role == 1:
-        print("You have a point as input!")
+        print("You have a point as input! Your point is: ")
         #open the csv file containing the point's coordinates
         with open('data/point.csv') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
                 point[0] = int(row[0])
                 point[1] = int(row[1])
+                print((row[0],row[1]))
         
 
     #if pid is two, you are Bob and have a polygon.
@@ -81,7 +82,7 @@ async def main():
     # - the points are in cyclic order
     # - the first m points belong to lower boundary
     if role == 2:
-        print("You have a polygon as input!")
+        print("You have a polygon as input! Your polygon is ")
         #open the csv file containing the polygon's coordinates
         with open('data/polygon.csv') as csvfile:
             reader = csv.reader(csvfile)
@@ -89,6 +90,7 @@ async def main():
             tmp = 0
             for row in reader:
                 tmp = tmp + 1
+                print((row[0],row[1]))
     
     # Bob (Party 2) sends the number to vertices to all parties.
     len_polygon = await mpc.transfer(tmp,2)
@@ -159,7 +161,7 @@ async def main():
             result = result + point_line_reln[i] * sec_polygon_boundary[i]
     verdict = mpc.if_else(result == len_polygon,1,0)
     
-    #print the result
+    #print the result but only give output to party 1 and 2
     print("The solution is ")
     print(await mpc.output(verdict,[1,2]))
 
